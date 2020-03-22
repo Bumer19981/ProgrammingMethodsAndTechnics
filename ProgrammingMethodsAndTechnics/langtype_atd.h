@@ -10,6 +10,10 @@ namespace simple_langtypes {
         struct objectoriented {
             short int year;
         } o;
+        struct functional {
+            enum typification { strict, dynamic } typification;
+            bool isLazyCalculations;
+        } f;
     };
 }
 #endif
