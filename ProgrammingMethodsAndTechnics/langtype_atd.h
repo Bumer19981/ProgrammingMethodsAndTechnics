@@ -1,7 +1,7 @@
 #ifndef __langtype_atd__
 #define __langtype_atd__
 namespace simple_langtypes {
-    struct langtype {      
+    struct langtype {
         int k;
         struct procedure {
             bool isAbstract;
@@ -9,6 +9,7 @@ namespace simple_langtypes {
         } p;
         struct objectoriented {
             short int year;
+            enum inheritance { once, multiple, interface } inheritance;
         } o;
     };
 }
