@@ -15,5 +15,6 @@ namespace simple_langtypes {
         default:
             ofst << "Incorrect language!" << endl;
         }
+        ofst << "mentions = " << l.mentions << endl;
     }
 }

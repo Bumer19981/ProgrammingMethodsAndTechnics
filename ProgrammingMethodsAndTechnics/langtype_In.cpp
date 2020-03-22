@@ -13,12 +13,14 @@ namespace simple_langtypes {
             l = new langtype;
             l->k = 1;
             In(l->p, ifst);
+            ifst >> l->mentions;
             return l;
         }
         else if (k == 2) {
             l = new langtype;
             l->k = 2;
             In(l->o, ifst);
+            ifst >> l->mentions;
             return l;
         }
         else{

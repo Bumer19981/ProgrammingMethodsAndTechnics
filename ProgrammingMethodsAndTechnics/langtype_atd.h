@@ -3,6 +3,7 @@
 namespace simple_langtypes {
     struct langtype {
         int k;
+        int mentions;
         struct procedure {
             bool isAbstract;
             short int year;
