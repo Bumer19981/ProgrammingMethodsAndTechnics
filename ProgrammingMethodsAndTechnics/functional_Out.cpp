@@ -6,6 +6,6 @@ namespace simple_langtypes {
     void Out(langtype::functional& f, ofstream& ofst) {
         string typification = f.typification == 0 ? "strict" : "dinamic";
         ofst << "It is a functional language: typification = " << typification
-            << ", lazy calculations = " << f.isLazyCalculations << endl;
+            << ", lazy calculations = " << f.isLazyCalculations << ", year = " << f.year << endl;;
     }
 }
