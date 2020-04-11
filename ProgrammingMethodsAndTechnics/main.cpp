@@ -7,6 +7,7 @@ namespace simple_langtypes {
 	void Clear(container& c);
 	void InVec(container& c, ifstream& ifst);
 	void OutVec(container& c, ofstream& ofst);
+	void Sort(container& c);
 }
 using namespace simple_langtypes;
 int main(int argc, char* argv[]) {
@@ -22,6 +23,9 @@ int main(int argc, char* argv[]) {
 	InitVec(c);
 	InVec(c, ifst);
 	ofst << "Filled container. " << endl;
+	OutVec(c, ofst);
+	Sort(c);
+	ofst << "Sorted container. " << endl;
 	OutVec(c, ofst);
 	Clear(c);
 	ofst << "Empty container. " << endl;
