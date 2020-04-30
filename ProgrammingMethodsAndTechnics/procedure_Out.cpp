@@ -1,4 +1,3 @@
-//---------------------------------------------------
 #include <fstream>
 #include "langtype_atd.h"
 using namespace std;
