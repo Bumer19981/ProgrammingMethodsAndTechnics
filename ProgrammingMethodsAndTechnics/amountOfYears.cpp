@@ -16,6 +16,9 @@ namespace simple_langtypes {
 		else if (l.k == 2){
 			return yearNow - l.o.year;
 		}
+		else if (l.k == 3) {
+			return yearNow - l.f.year;
+		}
 		else {
 			return -1;
 		}

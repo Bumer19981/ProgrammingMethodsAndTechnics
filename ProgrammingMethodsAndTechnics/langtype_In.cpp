@@ -28,6 +28,7 @@ namespace simple_langtypes {
             l = new langtype;
             l->k = 3;
             In(l->f, ifst);
+            ifst >> l->mentions;
             return l;
         }
         else{
