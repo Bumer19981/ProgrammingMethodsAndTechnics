@@ -4,6 +4,7 @@ using namespace std;
 namespace simple_langtypes {
     void In(langtype::procedure& p, ifstream& ist);
     void In(langtype::objectoriented& o, ifstream& ist);
+    void In(langtype::functional& f, ifstream& ist);
     langtype* In(ifstream& ifst)
     {
         langtype* l;
@@ -21,6 +22,12 @@ namespace simple_langtypes {
             l->k = 2;
             In(l->o, ifst);
             ifst >> l->mentions;
+            return l;
+        }
+        else if (k == 3) {
+            l = new langtype;
+            l->k = 3;
+            In(l->f, ifst);
             return l;
         }
         else{

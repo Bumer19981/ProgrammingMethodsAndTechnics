@@ -12,6 +12,11 @@ namespace simple_langtypes {
             short int year;
             enum inheritance { once, multiple, interface } inheritance;
         } o;
+        struct functional {
+            short int year;
+            enum typification { strict, dynamic } typification;
+            bool isLazyCalculations;
+        } f;
     };
 }
 #endif
