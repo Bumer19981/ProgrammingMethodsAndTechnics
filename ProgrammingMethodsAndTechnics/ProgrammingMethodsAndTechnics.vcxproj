@@ -151,6 +151,7 @@
     <ClCompile Include="container_Constr.cpp" />
     <ClCompile Include="container_In.cpp" />
     <ClCompile Include="container_Out.cpp" />
+    <ClCompile Include="container_OutProcedure.cpp" />
     <ClCompile Include="functional_In.cpp" />
     <ClCompile Include="functional_Out.cpp" />
     <ClCompile Include="main.cpp" />
