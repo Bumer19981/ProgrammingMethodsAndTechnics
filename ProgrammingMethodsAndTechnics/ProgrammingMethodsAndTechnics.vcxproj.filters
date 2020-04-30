@@ -45,6 +45,9 @@
     <ClCompile Include="langtype_In.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="amountOfYears.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="functional_In.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
