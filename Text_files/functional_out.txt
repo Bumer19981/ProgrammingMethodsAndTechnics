@@ -1,0 +1,1 @@
+It is a functional language: typification = dinamic, lazy calculations = 1, year = 2019

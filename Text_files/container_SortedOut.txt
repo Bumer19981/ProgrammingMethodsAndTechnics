@@ -1,0 +1,7 @@
+Container contents 2 elements.
+It is an object-oriented language: inheritance = multiple, year = 1998
+mentions = 2
+amount of years = 22
+It is a procedure language: is abstract = 0, year = 2012
+mentions = 1
+amount of years = 8

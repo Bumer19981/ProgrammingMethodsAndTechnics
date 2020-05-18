@@ -1,8 +1,12 @@
 #ifndef __container_atd__
 #define __container_atd__
-#include <iostream>
+
+#include <fstream>//4
+using namespace std;//4
+
 namespace simple_langtypes {
     struct langtype;
+ 
     struct container
     {
         struct List
@@ -19,6 +23,13 @@ namespace simple_langtypes {
         };
         List list;
     }; 
+    void InitVec(container& c);
+    void Clear(container& c);
+    void InVec(container& c, ifstream& ifst);
+    void OutVec(container& c, ofstream& ofst);
+    void Sort(container& c);
+    bool Compare(langtype* first, langtype* second);
+    void OutProcedure(container& c, ofstream& ofst);
 }
 #endif
 #pragma once

@@ -2,9 +2,9 @@
 #include "langtype_atd.h"
 using namespace std;
 namespace simple_langtypes {
-    void In(langtype::procedure& p, ifstream& ist);
-    void In(langtype::objectoriented& o, ifstream& ist);
-    void In(langtype::functional& f, ifstream& ist);
+    //void In(langtype::procedure& p, ifstream& ist);
+    //void In(langtype::objectoriented& o, ifstream& ist);
+    //void In(langtype::functional& f, ifstream& ist);
     langtype* In(ifstream& ifst)
     {
         langtype* l;

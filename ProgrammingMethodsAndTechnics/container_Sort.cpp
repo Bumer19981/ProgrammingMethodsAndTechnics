@@ -3,7 +3,7 @@
 
 using namespace std;
 namespace simple_langtypes {
-	bool Compare(langtype* first, langtype* second);
+	//bool Compare(langtype* first, langtype* second);
 	void Sort(container& c) {
 		for (int i = 0; i < c.list.size - 1; i++) {
 			for (int j = i + 1; j < c.list.size; j++) {

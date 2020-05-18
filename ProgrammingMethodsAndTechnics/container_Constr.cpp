@@ -16,5 +16,7 @@ namespace simple_langtypes {
             c.list.Head = temp;                          
             c.list.size--;                             
         }
+        c.list.Head = NULL;
+        c.list.Tail = NULL;
     }
 }

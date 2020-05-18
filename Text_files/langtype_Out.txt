@@ -1,0 +1,2 @@
+It is a procedure language: is abstract = 1, year = 2010
+mentions = 5
