@@ -5,6 +5,10 @@ namespace simple_langtypes {
     langtype* In(ifstream& ifdt);
 
     void InVec(container& c, ifstream& ifst) {
+        if (!ifst.is_open())
+        {
+            throw std::invalid_argument("Error reading file!");
+        }
         while (!ifst.eof()) {
             langtype* l;
             if ((l = In(ifst)) != 0)

@@ -8,6 +8,10 @@ namespace simple_langtypes {
 	void Out(langtype& s, ofstream& ofst);
 	int AmountOfYears(langtype& l);
 	void OutProcedure(container& c, ofstream& ofst) {
+		if (!ofst.is_open())
+		{
+			throw std::invalid_argument("Error writing file!");
+		}
 		ofst << "Only procedure." << endl;
 		container::List::Node* node = c.list.Head;
 		for (int i = 0; i < c.list.size; i++) {

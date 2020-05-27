@@ -5,6 +5,11 @@ using namespace std;
 namespace simple_langtypes {
 	//bool Compare(langtype* first, langtype* second);
 	void Sort(container& c) {
+		if (c.list.Head == NULL)
+		{
+			throw std::invalid_argument("Error: list is empty!");
+		}
+
 		for (int i = 0; i < c.list.size - 1; i++) {
 			for (int j = i + 1; j < c.list.size; j++) {
 				container::List::Node* ComparableItem1 = new container::List::Node;
