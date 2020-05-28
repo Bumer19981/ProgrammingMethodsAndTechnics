@@ -17,8 +17,8 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string inputPath = "../../Text_files/procedure_in.txt";
 			ifstream infile(inputPath);
-			langtype* l1 = new langtype;
-			In(l1->p, infile);
+			Langtype* l1 = new Langtype;
+			in(l1->p, infile);
 			infile.close();
 			Assert::IsTrue(l1->p.isAbstract == 0);
 			Assert::IsTrue(l1->p.year == 2012);
@@ -27,10 +27,10 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string outPath = "../../Text_files/procedure_out.txt";
 			ofstream output(outPath);
-			langtype* l = new langtype;
+			Langtype* l = new Langtype;
 			l->p.isAbstract = 0;
 			l->p.year = 1997;
-			Out(l->p, output);
+			out(l->p, output);
 			output.close();
 			ifstream infile(outPath);
 			std::stringstream buffer;
@@ -46,21 +46,21 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string inputPath = "../../Text_files/objectoriented_in.txt";
 			ifstream infile(inputPath);
-			langtype* l1 = new langtype;
-			In(l1->o, infile);
+			Langtype* l1 = new Langtype;
+			in(l1->o, infile);
 			infile.close();
 
-			Assert::IsTrue(l1->o.inheritance == l1->o.multiple);
+			Assert::IsTrue(l1->o.inheritance == l1->o.MULTIPLE);
 			Assert::IsTrue(l1->o.year == 1998);
 		}
 		TEST_METHOD(ObjectorientedOutTest)
 		{
 			string outPath = "../../Text_files/objectoriented_out.txt";
 			ofstream output(outPath);
-			langtype* l = new langtype;
-			l->o.inheritance = l->o.once;
+			Langtype* l = new Langtype;
+			l->o.inheritance = l->o.ONCE;
 			l->o.year = 1988;
-			Out(l->o, output);
+			out(l->o, output);
 			output.close();
 			ifstream infile(outPath);
 			std::stringstream buffer;
@@ -77,10 +77,10 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string inputPath = "../../Text_files/functional_in.txt";
 			ifstream infile(inputPath);
-			langtype* l1 = new langtype;
-			In(l1->f, infile);
+			Langtype* l1 = new Langtype;
+			in(l1->f, infile);
 			infile.close();
-			Assert::IsTrue(l1->f.typification == l1->f.strict);
+			Assert::IsTrue(l1->f.typification == l1->f.STRICT);
 			Assert::IsTrue(l1->f.isLazyCalculations == 0);
 			Assert::IsTrue(l1->f.year == 2008);
 		}
@@ -88,11 +88,11 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string outPath = "../../Text_files/functional_out.txt";
 			ofstream output(outPath);
-			langtype* l = new langtype;
-			l->f.typification = l->f.dynamic;
+			Langtype* l = new Langtype;
+			l->f.typification = l->f.DYNAMIC;
 			l->f.year = 2019;
 			l->f.isLazyCalculations = 1;
-			Out(l->f, output);
+			out(l->f, output);
 			output.close();
 			ifstream infile(outPath);
 			std::stringstream buffer;
@@ -108,8 +108,8 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string inputPath = "../../Text_files/langtype_in.txt";
 			ifstream infile(inputPath);
-			langtype* l = new langtype;
-			l = In(infile);
+			Langtype* l = new Langtype;
+			l = in(infile);
 			infile.close();
 			Assert::IsTrue(l->p.year == 2012);
 			Assert::IsTrue(l->mentions == 1);
@@ -119,12 +119,12 @@ namespace ProgrammingMethodsAndTechnicsTests
 		{
 			string outPath = "../../Text_files/langtype_Out.txt";
 			ofstream output(outPath);
-			langtype* l = new langtype;
+			Langtype* l = new Langtype;
 			l->k = 1;
 			l->p.isAbstract = 1;
 			l->p.year = 2010;
 			l->mentions = 5;
-			Out(*l, output);
+			out(*l, output);
 			output.close();
 			ifstream infile(outPath);
 			std::stringstream buffer;
@@ -135,83 +135,83 @@ namespace ProgrammingMethodsAndTechnicsTests
 		}
 		TEST_METHOD(LangtypeAmountOfYearsTest)
 		{
-			langtype* l = new langtype;
+			Langtype* l = new Langtype;
 			l->k = 1;
 			l->p.year = 2019;
-			Assert::IsTrue(AmountOfYears(*l) == 1);
+			Assert::IsTrue(amountOfYears(*l) == 1);
 		}
 		TEST_METHOD(LangtypeCompareTest)
 		{
-			langtype* l = new langtype;
+			Langtype* l = new Langtype;
 			l->k = 1;
 			l->p.year = 2019;
-			langtype* l1 = new langtype;
+			Langtype* l1 = new Langtype;
 			l1->p.year = 2020;
-			Assert::IsTrue(Compare(l, l1) == false);
+			Assert::IsTrue(compare(l, l1) == false);
 		}
 	};
 	TEST_CLASS(ContainerTests)
 	{
 		TEST_METHOD(ContainerInitVecTest)
 		{
-			container c;
-			InitVec(c);
-			Assert::IsTrue(c.list.Head == NULL);
-			Assert::IsTrue(c.list.Tail == NULL);
+			Container c;
+			initVec(c);
+			Assert::IsTrue(c.list.head == NULL);
+			Assert::IsTrue(c.list.tail == NULL);
 			Assert::IsTrue(c.list.size == 0);
 		}
 		TEST_METHOD(ContainerClearTest)
 		{
-			langtype* l = new langtype;
-			container::List list;
-			container::List::Node* node = new container::List::Node;
+			Langtype* l = new Langtype;
+			Container::List list;
+			Container::List::Node* node = new Container::List::Node;
 			node->l = l;
-			node->Next = NULL;
-			node->Prev = NULL;
-			list.Head = node;
-			list.Tail = node;
+			node->next = NULL;
+			node->prev = NULL;
+			list.head = node;
+			list.tail = node;
 			list.size = 1;
-			container c;
+			Container c;
 			c.list = list;
-			Clear(c);
-			Assert::IsTrue(c.list.Head == NULL);
-			Assert::IsTrue(c.list.Tail == NULL);
+			clear(c);
+			Assert::IsTrue(c.list.head == NULL);
+			Assert::IsTrue(c.list.tail == NULL);
 			Assert::IsTrue(c.list.size == 0);
 		}
 		TEST_METHOD(ContainerInTest)
 		{
 			string inPath = "../../Text_files/container_In.txt";
-			container c;
+			Container c;
 			ifstream infile(inPath);
-			InitVec(c);
-			InVec(c, infile);
+			initVec(c);
+			inVec(c, infile);
 			infile.close();
 			Assert::IsTrue(c.list.size == 2);
 
-			Assert::IsTrue(c.list.Head->l->mentions == 1);
-			Assert::IsTrue(c.list.Head->l->p.year == 2012);
-			langtype* l = c.list.Head->l;
+			Assert::IsTrue(c.list.head->l->mentions == 1);
+			Assert::IsTrue(c.list.head->l->p.year == 2012);
+			Langtype* l = c.list.head->l;
 			Assert::IsTrue(l->p.isAbstract == 0);
-			langtype* l1 = c.list.Head->Next->l;
+			Langtype* l1 = c.list.head->next->l;
 
-			Assert::IsTrue(c.list.Head->Next->l->mentions == 2);
-			Assert::IsTrue(c.list.Head->Next->l->o.year == 1998);
-			Assert::IsTrue(l1->o.inheritance == l1->o.multiple);
+			Assert::IsTrue(c.list.head->next->l->mentions == 2);
+			Assert::IsTrue(c.list.head->next->l->o.year == 1998);
+			Assert::IsTrue(l1->o.inheritance == l1->o.MULTIPLE);
 
-			Assert::IsTrue(c.list.Head->Next->Next->l == l);
-			Assert::IsTrue(c.list.Head->Prev->l == l1);
+			Assert::IsTrue(c.list.head->next->next->l == l);
+			Assert::IsTrue(c.list.head->prev->l == l1);
 		}
 		TEST_METHOD(ContainerOutTest)
 		{
 			string inPath = "../../Text_files/container_In.txt";
-			container c;
+			Container c;
 			ifstream infile(inPath);
-			InitVec(c);
-			InVec(c, infile);
+			initVec(c);
+			inVec(c, infile);
 			infile.close();
 			string outPath = "../../Text_files/container_Out.txt";
 			ofstream output(outPath);
-			OutVec(c, output);
+			outVec(c, output);
 			output.close();
 
 			ifstream infile1(outPath);
@@ -224,15 +224,15 @@ namespace ProgrammingMethodsAndTechnicsTests
 		TEST_METHOD(ContainerSortTest)
 		{
 			string inPath = "../../Text_files/container_In.txt";
-			container c;
+			Container c;
 			ifstream infile(inPath);
-			InitVec(c);
-			InVec(c, infile);
+			initVec(c);
+			inVec(c, infile);
 			infile.close();
 			string outPath = "../../Text_files/container_SortedOut.txt";
 			ofstream output(outPath);
-			Sort(c);
-			OutVec(c, output);
+			sort(c);
+			outVec(c, output);
 			output.close();
 
 			ifstream infile1(outPath);
@@ -245,15 +245,15 @@ namespace ProgrammingMethodsAndTechnicsTests
 		TEST_METHOD(ContainerOutProcedureTest)
 		{
 			string inPath = "../../Text_files/container_In.txt";
-			container c;
+			Container c;
 			ifstream infile(inPath);
-			InitVec(c);
-			InVec(c, infile);
+			initVec(c);
+			inVec(c, infile);
 			infile.close();
 			string outPath = "../../Text_files/container_OutProcedure.txt";
 			ofstream output(outPath);
-			Sort(c);
-			OutProcedure(c, output);
+			sort(c);
+			outProcedure(c, output);
 			output.close();
 
 			ifstream infile1(outPath);

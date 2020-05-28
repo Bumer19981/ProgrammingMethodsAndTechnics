@@ -5,26 +5,26 @@
 
 using namespace std;
 namespace simple_langtypes {
-	void Out(langtype& s, ofstream& ofst);
-	int AmountOfYears(langtype& l);
-	void OutProcedure(container& c, ofstream& ofst) {
+	void out(Langtype& s, ofstream& ofst);
+	int amountOfYears(Langtype& l);
+	void outProcedure(Container& c, ofstream& ofst) {
 		if (!ofst.is_open())
 		{
 			throw std::invalid_argument("Error writing file!");
 		}
 		ofst << "Only procedure." << endl;
-		container::List::Node* node = c.list.Head;
+		Container::List::Node* node = c.list.head;
 		for (int i = 0; i < c.list.size; i++) {
 			ofst << i << ": ";
 			if (node->l->k == 1) {
-				Out(*node->l, ofst);
+				out(*node->l, ofst);
 				ofst << "amount of years = "
-					<< AmountOfYears(*node->l) << endl;
-				node = node->Next;
+					<< amountOfYears(*node->l) << endl;
+				node = node->next;
 			}
 			else {
 				ofst << endl;
-				node = node->Next;
+				node = node->next;
 			}
 		}
 	}}

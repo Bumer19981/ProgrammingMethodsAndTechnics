@@ -2,6 +2,6 @@
 using namespace std;
 namespace simple_langtypes {
     //int AmountOfYears(langtype& l);
-    bool Compare(langtype* first, langtype* second) {
-        return AmountOfYears(*first) < AmountOfYears(*second);
+    bool compare(Langtype* first, Langtype* second) {
+        return amountOfYears(*first) < amountOfYears(*second);
     }}

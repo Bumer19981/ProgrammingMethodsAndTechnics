@@ -2,29 +2,29 @@
 #include "container_atd.h"
 using namespace std;
 namespace simple_langtypes {
-    langtype* In(ifstream& ifdt);
+    Langtype* in(ifstream& ifdt);
 
-    void InVec(container& c, ifstream& ifst) {
+    void inVec(Container& c, ifstream& ifst) {
         if (!ifst.is_open())
         {
             throw std::invalid_argument("Error reading file!");
         }
         while (!ifst.eof()) {
-            langtype* l;
-            if ((l = In(ifst)) != 0)
+            Langtype* l;
+            if ((l = in(ifst)) != 0)
             {
                 c.list.size++;
-                container::List::Node* temp = new container::List::Node;
-                temp->Next = c.list.Head;
-                temp->Prev = c.list.Tail;
+                Container::List::Node* temp = new Container::List::Node;
+                temp->next = c.list.head;
+                temp->prev = c.list.tail;
                 temp->l = l;
-                if (c.list.Head != NULL)
+                if (c.list.head != NULL)
                 {
-                    c.list.Tail->Next = temp;
-                    c.list.Tail = temp;
-                    c.list.Head->Prev = c.list.Tail;
+                    c.list.tail->next = temp;
+                    c.list.tail = temp;
+                    c.list.head->prev = c.list.tail;
                 }
-                else c.list.Head = c.list.Tail = temp;
+                else c.list.head = c.list.tail = temp;
             }
         }
     }

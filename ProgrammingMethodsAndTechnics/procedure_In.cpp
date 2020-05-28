@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 namespace simple_langtypes {
-    void In(langtype::procedure& p, ifstream& ifst) {
+    void in(Langtype::Procedure& p, ifstream& ifst) {
         string line;
         getline(ifst, line);
         int words = 0;

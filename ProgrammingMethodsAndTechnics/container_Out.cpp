@@ -2,23 +2,23 @@
 #include "container_atd.h"
 using namespace std;
 namespace simple_langtypes {
-    void Out(langtype& l, ofstream& ofst);
-    int AmountOfYears(langtype& l);
-    void OutVec(container& c, ofstream &ofst) {
+    void out(Langtype& l, ofstream& ofst);
+    int amountOfYears(Langtype& l);
+    void outVec(Container& c, ofstream &ofst) {
         if (!ofst.is_open())
         {
             throw std::invalid_argument("Error writing file!");
         }
         ofst << "Container contents " << c.list.size
             << " elements." << endl;
-        container::List::Node* tempHead = c.list.Head;   
+        Container::List::Node* tempHead = c.list.head;
         int temp = c.list.size;                           
         while (temp != 0)  {                    
-            langtype* l = tempHead->l;
-            Out(*l, ofst);
+            Langtype* l = tempHead->l;
+            out(*l, ofst);
             ofst << "amount of years = "
-                << AmountOfYears(*l) << endl;
-            tempHead = tempHead->Next;       
+                << amountOfYears(*l) << endl;
+            tempHead = tempHead->next;       
             temp--;                              
         }
     }  

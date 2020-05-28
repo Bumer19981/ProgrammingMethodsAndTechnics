@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 namespace simple_langtypes {
-	void In(langtype::objectoriented& o, ifstream& ifst)
+	void in(Langtype::Objectoriented& o, ifstream& ifst)
 	{
         string line;
         getline(ifst, line);
@@ -46,15 +46,15 @@ namespace simple_langtypes {
 		string inheritance = array[0];
 		o.year = stoi(array[1]);
 		if (inheritance == "once") {
-			o.inheritance = o.once;
+			o.inheritance = o.ONCE;
 		}
 		else if (inheritance == "multiple")
 		{
-			o.inheritance = o.multiple;
+			o.inheritance = o.MULTIPLE;
 		}
 		else
 		{
-			o.inheritance = o.interface;
+			o.inheritance = o.INTERFACE;
 		}
 	}
 }

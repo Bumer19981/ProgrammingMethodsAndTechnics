@@ -1,22 +1,22 @@
 #include "container_atd.h"
 #include "langtype_atd.h"
 namespace simple_langtypes {
-    void InitVec(container & c) 
+    void initVec(Container & c) 
     {
-        c.list.Head = NULL;
-        c.list.Tail = NULL;
+        c.list.head = NULL;
+        c.list.tail = NULL;
         c.list.size = 0;
     }
-    void Clear(container &c)
+    void clear(Container &c)
     {
         while (c.list.size != 0)                        
         {
-            container::List::Node* temp = c.list.Head->Next;
-            delete c.list.Head;                           
-            c.list.Head = temp;                          
+            Container::List::Node* temp = c.list.head->next;
+            delete c.list.head;                           
+            c.list.head = temp;                          
             c.list.size--;                             
         }
-        c.list.Head = NULL;
-        c.list.Tail = NULL;
+        c.list.head = NULL;
+        c.list.tail = NULL;
     }
 }

@@ -4,7 +4,7 @@
 #include <ctime>
 using namespace std;
 namespace simple_langtypes {
-	int AmountOfYears(langtype &l)
+	int amountOfYears(Langtype &l)
 	{
 		time_t now = time(0);
 		struct tm ltm;

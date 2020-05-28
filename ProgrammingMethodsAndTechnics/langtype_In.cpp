@@ -6,9 +6,9 @@ namespace simple_langtypes {
     //void In(langtype::procedure& p, ifstream& ist);
     //void In(langtype::objectoriented& o, ifstream& ist);
     //void In(langtype::functional& f, ifstream& ist);
-    langtype* In(ifstream& ifst)
+   Langtype* in(ifstream& ifst)
     {
-        langtype* l;
+        Langtype* l;
         int k;
 
         string line;
@@ -44,9 +44,9 @@ namespace simple_langtypes {
         k = stoi(array[0]);;
 
         if (k == 1) {
-            l = new langtype;
+            l = new Langtype;
             l->k = 1;
-            In(l->p, ifst);
+            in(l->p, ifst);
             getline(ifst, line);
             words = 0;
             string array1[1];
@@ -84,9 +84,9 @@ namespace simple_langtypes {
             return l;
         }
         else if (k == 2) {
-            l = new langtype;
+            l = new Langtype;
             l->k = 2;
-            In(l->o, ifst);
+            in(l->o, ifst);
             getline(ifst, line);
             words = 0;
             string array1[1];
@@ -124,9 +124,9 @@ namespace simple_langtypes {
             return l;
         }
         else if (k == 3) {
-            l = new langtype;
+            l = new Langtype;
             l->k = 3;
-            In(l->f, ifst);
+            in(l->f, ifst);
             getline(ifst, line);
             words = 0;
             string array1[1];

@@ -3,8 +3,8 @@
 #include <string.h>
 using namespace std;
 namespace simple_langtypes {
-    void Out(langtype::functional& f, ofstream& ofst) {
-        string typification = f.typification == f.strict ? "strict" : "dinamic";
+    void out(Langtype::Functional& f, ofstream& ofst) {
+        string typification = f.typification == f.STRICT ? "strict" : "dinamic";
         ofst << "It is a functional language: typification = " << typification
             << ", lazy calculations = " << f.isLazyCalculations << ", year = " << f.year << endl;;
     }

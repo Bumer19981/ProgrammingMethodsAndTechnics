@@ -25,19 +25,19 @@ int main(int argc, char* argv[]) {
 		ofstream outfile(outputPath);
 
 		cout << "Start" << endl;
-		container c;
-		InitVec(c);
-		InVec(c, file);
+		Container c;
+		initVec(c);
+		inVec(c, file);
 		outfile << "Filled container. " << endl;
-		OutVec(c, outfile);
-		OutProcedure(c, outfile);
+		outVec(c, outfile);
+		outProcedure(c, outfile);
 
-		Sort(c);
+		sort(c);
 		outfile << "Sorted container. " << endl;
-		OutVec(c, outfile);
-		Clear(c);
+		outVec(c, outfile);
+		clear(c);
 		outfile << "Empty container. " << endl;
-		OutVec(c, outfile);
+		outVec(c, outfile);
 		cout << "Stop" << endl;
 	}
 	catch (std::invalid_argument & ia)

@@ -1,36 +1,43 @@
 #ifndef __langtype_atd__
 #define __langtype_atd__
-
 #include <fstream>//4
 using namespace std;//4
-
 namespace simple_langtypes {
-    struct langtype {
+    struct Langtype {
         int k;
         int mentions;
-        struct procedure {
+        struct Procedure {
             bool isAbstract;
             short int year;
         } p;
-        struct objectoriented {
+        struct Objectoriented {
             short int year;
-            enum inheritance { once, multiple, interface } inheritance;
+            enum Inheritance { 
+                ONCE,
+                MULTIPLE,
+                INTERFACE
+            };
+            Inheritance inheritance;
         } o;
-        struct functional {
+        struct Functional {
             short int year;
-            enum typification { strict, dynamic } typification;
+            enum Typification { 
+                STRICT,
+                DYNAMIC
+            };
+            Typification typification;
             bool isLazyCalculations;
         } f;
     };
-    void In(langtype::procedure& p, ifstream& ist);
-    void In(langtype::objectoriented& o, ifstream& ist);
-    void In(langtype::functional& f, ifstream& ist);
-    langtype* In(ifstream& ifst);
-    void Out(langtype::procedure& p, ofstream& ofst);
-    void Out(langtype::objectoriented& o, ofstream& ofst);
-    void Out(langtype::functional& o, ofstream& ofst);
-    void Out(langtype& l, ofstream& ofst);
-    int AmountOfYears(langtype& l);
+    void in(Langtype::Procedure& p, ifstream& ist);
+    void in(Langtype::Objectoriented& o, ifstream& ist);
+    void in(Langtype::Functional& f, ifstream& ist);
+    Langtype* in(ifstream& ifst);
+    void out(Langtype::Procedure& p, ofstream& ofst);
+    void out(Langtype::Objectoriented& o, ofstream& ofst);
+    void out(Langtype::Functional& o, ofstream& ofst);
+    void out(Langtype& l, ofstream& ofst);
+    int amountOfYears(Langtype& l);
 }
 #endif
-#pragma /*once*/
+#pragma
