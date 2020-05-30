@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 		outfile << "Filled container. " << endl;
 		outVec(c, outfile);
 		outProcedure(c, outfile);
-
+		MultiMethod(c, ofst);
 		sort(c);
 		outfile << "Sorted container. " << endl;
 		outVec(c, outfile);
