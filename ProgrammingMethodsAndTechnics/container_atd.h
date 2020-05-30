@@ -27,6 +27,7 @@ namespace simple_langtypes {
     void sort(Container& c);
     bool compare(Langtype* first, Langtype* second);
     void outProcedure(Container& c, ofstream& ofst);
+    void MultiMethod(Container& c, ofstream& ofst);
 }
 #endif
 #pragma once
